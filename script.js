@@ -20,7 +20,7 @@ sobre.addEventListener("click", (e) => {
 // SI: mensaje + lluvia de corazones
 btnSi.addEventListener("click", (e) => {
   e.stopPropagation();
-  respuesta.textContent = "SÍÍÍ 😭❤️ Te prometo que será el mejor San Valentín.";
+  respuesta.textContent = "Se que no he sido la mejor persona del mundo, pero espero poderte dar todo el amor que tengo en el corazón, se que puedo amarte y mucho; perdón por todo lo malo y muchas gracias por todo lo que me has enseñado hasta hoy, no sabia que ser amado era tan bonito, te prometo que te daré lo mejor y te amaré como nunca nadie lo ha hecho ";
   lanzarCorazones(30);
 });
 
