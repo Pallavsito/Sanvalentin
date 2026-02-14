@@ -1,0 +1,148 @@
+body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background: linear-gradient(to bottom, #ffcccc, #ffe6e6);
+  font-family: Arial, sans-serif;
+  overflow:hidden;
+}
+
+.escena{
+  width: 700px;
+  height: 520px;
+  position: relative;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.hint{
+  position:absolute;
+  bottom: 40px;
+  width:100%;
+  text-align:center;
+  font-weight:bold;
+  color:#b1002d;
+  opacity:0.9;
+}
+
+.sobre{
+  position: relative;
+  width: 420px;
+  height: 280px;
+  cursor: pointer;
+  transform: translateY(30px);
+}
+
+/* base del sobre */
+.base{
+  position:absolute;
+  inset:0;
+  background: #ff5a7a;
+  border-radius: 18px;
+  box-shadow: 0 18px 45px rgba(0,0,0,0.25);
+  overflow:hidden;
+}
+
+/* tapa del sobre */
+.tapa{
+  position:absolute;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  background: #ff3f66;
+  clip-path: polygon(0 0, 100% 0, 50% 55%);
+  transform-origin: top;
+  transition: transform 0.55s ease;
+  z-index: 5;
+}
+
+/* carta */
+.carta{
+  position:absolute;
+  left: 50%;
+  bottom: 18px;
+  transform: translateX(-50%) translateY(120px);
+  width: 360px;
+  height: 240px;
+  background:#fff;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+  padding: 18px 18px 14px;
+  text-align:center;
+  transition: transform 0.55s ease;
+  z-index: 4;
+}
+
+.carta h1{
+  margin: 0;
+  font-size: 28px;
+}
+.carta h2{
+  margin: 8px 0 10px;
+  font-size: 22px;
+  color:#b1002d;
+}
+.carta p{
+  margin: 0 0 14px;
+  font-size: 14px;
+  color:#333;
+}
+
+.botones{
+  display:flex;
+  justify-content:center;
+  gap: 14px;
+  margin-top: 8px;
+}
+
+button{
+  border:none;
+  border-radius: 12px;
+  padding: 10px 18px;
+  font-size: 16px;
+  cursor:pointer;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+}
+
+.si{
+  background:#ff1f57;
+  color:#fff;
+}
+
+.no{
+  background:#222;
+  color:#fff;
+  position: relative;
+}
+
+.respuesta{
+  margin-top: 12px;
+  font-weight: bold;
+  color:#b1002d;
+  min-height: 22px;
+}
+
+/* estado abierto */
+.sobre.abierto .tapa{
+  transform: rotateX(165deg);
+}
+.sobre.abierto .carta{
+  transform: translateX(-50%) translateY(-35px);
+}
+
+/* corazones */
+.corazon{
+  position: fixed;
+  font-size: 22px;
+  pointer-events:none;
+  animation: flotar 1.4s ease-out forwards;
+}
+
+@keyframes flotar{
+  from { transform: translateY(0); opacity:1; }
+  to { transform: translateY(-120px); opacity:0; }
+}
